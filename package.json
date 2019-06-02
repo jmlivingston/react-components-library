@@ -1,11 +1,27 @@
 {
   "name": "react-components-library",
   "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "parcel build src/index.js --no-cache"
+  },
+  "dependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.3",
+    "prop-types": "15.7.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
   "description": "Boilerplate for creating React component libraries.",
-  "main": "index.js",
   "keywords": [
     "react"
   ],
   "author": "jmlivingston@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/jmlivingston/react-components-library"
 }
