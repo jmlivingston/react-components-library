@@ -1,0 +1,11 @@
+{
+  "name": "react-components-library",
+  "version": "1.0.0",
+  "description": "Boilerplate for creating React component libraries.",
+  "main": "index.js",
+  "keywords": [
+    "react"
+  ],
+  "author": "jmlivingston@gmail.com",
+  "license": "ISC"
+}
