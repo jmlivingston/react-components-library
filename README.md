@@ -33,5 +33,4 @@ The goal of this library is to provide a starting point for creating a React com
 
 - Documentation - publishing
 - Test
-- Lint
 - CSS / SASS Modules? To prevent using same class in different places.
