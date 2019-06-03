@@ -5,7 +5,9 @@
   "scripts": {
     "build": "webpack --mode=production",
     "start": "start-storybook -p 4000 --quiet",
-    "build-style-guide": "build-storybook"
+    "build-style-guide": "build-storybook",
+    "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -20,9 +22,20 @@
     "@storybook/addon-links": "5.0.11",
     "@storybook/addons": "5.0.11",
     "@storybook/react": "5.0.11",
+    "babel-eslint": "10.0.1",
     "babel-loader": "8.0.6",
     "css-loader": "2.1.1",
+    "eslint": "5.16.0",
+    "eslint-config-react-app": "4.0.1",
+    "eslint-plugin-flowtype": "3.9.1",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react-hooks": "1.6.0",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
     "node-sass": "4.12.0",
+    "prettier": "1.17.1",
     "prop-types": "15.7.2",
     "sass": "1.20.3",
     "sass-loader": "7.1.0",
@@ -42,6 +55,48 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ]
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "no-console": 1,
+      "react/default-props-match-prop-types": 1,
+      "react/no-unused-prop-types": 1,
+      "react/prop-types": 1,
+      "react/sort-prop-types": 1,
+      "react-hooks/rules-of-hooks": "error"
+    },
+    "settings": {
+      "react": {
+        "version": "latest"
+      }
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.{js,json,css}": [
+        "prettier --write",
+        "git add"
+      ],
+      "src/**/*.js": [
+        "npm run lint",
+        "git add"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "description": "Boilerplate for creating React component libraries.",
   "keywords": [

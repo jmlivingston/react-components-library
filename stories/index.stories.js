@@ -23,10 +23,6 @@ storiesOf('Button', module)
     </Button>
   ))
 
-storiesOf('BlueButton', module).add('Default', () => (
-  <BlueButton text="This is a button" onClick={console.log} />
-))
+storiesOf('BlueButton', module).add('Default', () => <BlueButton text="This is a button" onClick={console.log} />)
 
-storiesOf('GreenButton', module).add('Default', () => (
-  <GreenButton text="This is a button" onClick={console.log} />
-))
+storiesOf('GreenButton', module).add('Default', () => <GreenButton text="This is a button" onClick={console.log} />)
