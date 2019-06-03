@@ -4,24 +4,29 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import { Button as StoryBookButton, Welcome } from '@storybook/react/demo'
+import { Button, Welcome } from '@storybook/react/demo'
 
-import Button from '../src/components/button/Button'
+// Uncomment to test dist
+// import { BlueButton, GreenButton } from '../dist'
+import BlueButton from '../src/components/button/BlueButton'
+import GreenButton from '../src/components/button/GreenButton'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
 
-storiesOf('StoryBookButton', module)
-  .add('with text', () => (
-    <StoryBookButton onClick={action('clicked')}>Hello Button!</StoryBookButton>
-  ))
+storiesOf('Button', module)
+  .add('with text', () => <Button onClick={action('clicked')}>Hello Button!</Button>)
   .add('with some emoji', () => (
-    <StoryBookButton onClick={action('clicked')}>
+    <Button onClick={action('clicked')}>
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
-    </StoryBookButton>
+    </Button>
   ))
 
-storiesOf('Button', module).add('Default', () => (
-  <Button text="This is a button" onClick={console.log} />
+storiesOf('BlueButton', module).add('Default', () => (
+  <BlueButton text="This is a button" onClick={console.log} />
+))
+
+storiesOf('GreenButton', module).add('Default', () => (
+  <GreenButton text="This is a button" onClick={console.log} />
 ))
