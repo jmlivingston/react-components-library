@@ -31,4 +31,4 @@ The goal of this library is to provide a starting point for creating a React com
 
 ## TODO
 
-- CSS / SASS Modules? To prevent using same class in different places.
+- CSS / SASS Modules? To prevent using same class in different places. For example if we use ".button" for both buttons.
