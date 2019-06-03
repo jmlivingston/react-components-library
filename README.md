@@ -31,5 +31,4 @@ The goal of this library is to provide a starting point for creating a React com
 
 ## TODO
 
-- Documentation - publishing
 - CSS / SASS Modules? To prevent using same class in different places.
