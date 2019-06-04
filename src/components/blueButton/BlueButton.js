@@ -1,6 +1,6 @@
+import './BlueButton.scss'
 import PropTypes from 'prop-types'
 import React from 'react'
-import './BlueButton.scss'
 
 function BlueButton({ onClick, text }) {
   return (

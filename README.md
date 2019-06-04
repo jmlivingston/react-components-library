@@ -25,11 +25,15 @@ The goal of this library is to provide a starting point for creating a React com
 
 ## Publish
 
-> Note: Be sure to bump the version.
-
 `npm publish`
+
+## Create New Component (with SASS, stories, and spec)
+
+`npm run create-component -- name=fooBar`
+
+> Optionally, you can pass isEmpty=true and dir=yourDirName
 
 ## TODO
 
 - CSS / SASS Modules? To prevent using same class in different places. For example if we use ".button" for both buttons.
-- Create component script to generate .js, .spec.js, .stories.js, and .sass
+- Hide or fix Jest css import warning
