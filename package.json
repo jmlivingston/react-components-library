@@ -3,6 +3,7 @@
   "version": "0.0.10",
   "main": "dist/index.js",
   "scripts": {
+    "prebuild": "node --experimental-modules scripts/preBuild.mjs",
     "build": "webpack --mode=production",
     "start": "start-storybook -p 4000 --quiet",
     "test:dev": "jest --watch",
@@ -10,7 +11,8 @@
     "build-style-guide": "build-storybook",
     "deploy-style-guide": "storybook-to-ghpages",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "create-component": "node --experimental-modules scripts/createComponent/create.mjs $*"
   },
   "dependencies": {
     "react": "16.8.6",
