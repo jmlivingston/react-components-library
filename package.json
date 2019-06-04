@@ -44,7 +44,6 @@
     "husky": "2.3.0",
     "jest": "24.8.0",
     "jest-dom": "3.4.0",
-    "jest-transform-css": "2.0.0",
     "lint-staged": "8.1.7",
     "node-sass": "4.12.0",
     "prettier": "1.17.1",
@@ -80,9 +79,11 @@
     "setupFilesAfterEnv": [
       "@testing-library/react/cleanup-after-each"
     ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/src/style.mock.js"
+    },
     "transform": {
-      ".+\\.js$": "babel-jest",
-      ".+\\.(css|styl|less|sass|scss)$": "jest-transform-css"
+      ".+\\.js$": "babel-jest"
     }
   },
   "eslintConfig": {
