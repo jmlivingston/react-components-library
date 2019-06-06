@@ -49,7 +49,7 @@ The goal of this library is to provide a starting point for creating a reusable 
 
 ## Configuration
 
-This project uses a basic [webpack](https://webpack.js.org) configuration for building, GitHub pages for publishing, and Storybook for developing, debugging and a creating the style guide. For build configuration, see the root level webpack.config.js.
+This project uses a basic [webpack](https://webpack.js.org) configuration for building, GitHub pages for publishing, and Storybook for developing, debugging and a creating the style guide. For build configuration, see the root level webpack.config.js. For Storybook, use the configuration under the .storybook folder.
 
 ---
 
@@ -115,3 +115,11 @@ To create new components, you can use the following to generate the component, s
 
 - [nwb](https://github.com/insin/nwb)
 - [neutrino](https://neutrinojs.org)
+
+---
+
+## TODO
+
+- Storybook bug - shows accessibility errors on CSS Modules.
+- Storybook bug - shows accessibility errors on root elements
+- Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.

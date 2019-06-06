@@ -1,17 +1,26 @@
 import _kebabCase from 'lodash/kebabCase.js'
 
-const componentTemplate = ({ content, name, isEmpty, styleExtension }) => {
-  return `import React from 'react'
+const componentTemplate = ({ content, isEmpty, name, styleExtension }) => {
+  return `import PropTypes from 'prop-types'
+import React from 'react'
 import ${styleExtension.includes('module') ? 'styles from ' : ''}'./${name}.${styleExtension}'
 
-function ${name}() {
+function ${name}(${isEmpty ? '' : '{ text }'}) {
   return ${
     isEmpty
       ? `<>${content}</>`
       : `<div className=${
           styleExtension.includes('module') ? `{styles['${_kebabCase(name)}']}` : `"${_kebabCase(name)}"`
-        }>${content}</div>`
+        }>{text}</div>`
   }
+}
+
+${
+  isEmpty
+    ? ''
+    : `${name}.propTypes = {
+  text: PropTypes.string
+}`
 }
 
 export default ${name}
