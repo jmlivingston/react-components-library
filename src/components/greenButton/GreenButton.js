@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import './GreenButton.scss'
+import styles from './GreenButton.module.scss'
 
 function GreenButton({ onClick, text }) {
   return (
-    <button className="green-button" onClick={onClick}>
+    <button className={styles.button} onClick={onClick}>
       {text}
     </button>
   )

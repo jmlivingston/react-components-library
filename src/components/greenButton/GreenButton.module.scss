@@ -1,5 +1,5 @@
-.blue-button {
-  background-color: #007bff;
+.button {
+  background-color: #28a745;
   color: #fff;
   font-size: 16px;
   border-radius: 18px;
@@ -8,6 +8,6 @@
   cursor: pointer;
   text-transform: uppercase;
   &:hover {
-    background-color: #0069d9;
+    background-color: #218838;
   }
 }

@@ -15,10 +15,11 @@ let args = process.argv
 if (!args.name) {
   console.log('WARNING: name argument required. Example: npm run create-component -- name=Test')
 } else {
-  // Normalize casing
+  // Normalize casing and set defaults
   args.name = args.name[0].toUpperCase() + args.name.slice(1)
   args.dir = args.dir || _camelCase(args.name)
   args.isEmpty = args.isEmpty || false
+  args.styleExtension = args.styleExtension || 'module.scss' // Options: css, module.css, scss, module.scss
   args.content = `TODO: ${args.name}`
 
   const component = componentTemplate(args)
@@ -28,7 +29,7 @@ if (!args.name) {
 
   const basePath = path.join(__dirname, `../src/components/${_camelCase(args.name)}/`)
   const componentPath = path.join(`${basePath}${args.name}.js`)
-  const scssPath = path.join(`${basePath}${args.name}.scss`)
+  const scssPath = path.join(`${basePath}${args.name}.${args.styleExtension}`)
   const specPath = path.join(`${basePath}${args.name}.spec.js`)
   const storiesPath = path.join(`${basePath}${args.name}.stories.js`)
 
