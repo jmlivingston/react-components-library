@@ -11,15 +11,16 @@
 
 The goal of this library is to provide a starting point for creating a reusable React component library with following capabilities:
 
-- Develop and debug
-- Style (Supports css, scss, module.css, and module.scss)
-- Build
-- Publish
-- Document
-- Test
-- Lint
+- Develop and debug - Storybook
+- Style - supports css, scss, module.css, and module.scss
+- Build - Rollup
+- Publish - npm
+- Document - Storybook
+- Test - Jest, @testing-library/react
+- Lint - create-react-app
+- Formatting - prettier
 
-> Note: For creating a React application, as opposed to a "component library", we recommend [create-react-app](https://facebook.github.io/create-react-app) for SPAs or [Next.js](https://nextjs.org) for SSRs.
+> Note: For creating an application, as opposed to a "component library", we recommend [create-react-app](https://facebook.github.io/create-react-app) for SPAs or [Next.js](https://nextjs.org) for SSRs.
 
 ---
 
