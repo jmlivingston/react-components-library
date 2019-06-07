@@ -1,14 +1,44 @@
-const baseWebPackConfig = require('../webpack.config')
-
 function addCssModules({ config }) {
   config.module.rules = [
     ...config.module.rules.filter(rule => !rule.test.toString().includes('.css')), // Filter out existing css rules
-    ...baseWebPackConfig.module.rules.filter(rule => !rule.test.toString().includes('.js'))
+    {
+      test: /\.module\.s(a|c)ss$/,
+      loader: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+            camelCase: true,
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
+        }
+      ]
+    },
+    {
+      test: /\.s(a|c)ss$/,
+      exclude: /\.module.(s(a|c)ss)$/,
+      loader: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
+        }
+      ]
+    }
   ]
 
-  config.plugins = [...config.plugins, ...baseWebPackConfig.plugins]
-
-  config.resolve.extensions = [...new Set([...config.resolve.extensions, ...baseWebPackConfig.resolve.extensions])]
+  config.resolve.extensions = [...new Set([...config.resolve.extensions, '.scss'])]
 
   return config
 }
@@ -25,6 +55,6 @@ function addStorySource({ config }) {
 
 module.exports = async ({ config }) => ({
   ...config,
-  ...addStorySource({ config }),
-  ...addCssModules({ config })
+  ...addCssModules({ config }),
+  ...addStorySource({ config })
 })

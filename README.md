@@ -115,6 +115,7 @@ To create new components, you can use the following to generate the component, s
 
 - [nwb](https://github.com/insin/nwb)
 - [neutrino](https://neutrinojs.org)
+- [create-react-library](https://github.com/transitive-bullshit/create-react-library)
 
 ---
 
@@ -123,3 +124,14 @@ To create new components, you can use the following to generate the component, s
 - Storybook bug - shows accessibility errors on CSS Modules.
 - Storybook bug - shows accessibility errors on root elements
 - Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.
+- Should we really create an index.js on prebuild. Feels like it encourages people to do this: import { Button } from 'react-components-library' instead of import Button from 'react-components-library/ui/Button'
+
+---
+
+## Peer Dependencies Notes
+
+The following come up as warnings, but we don't need to add.
+
+- @emotion/core - Storybook bug - https://github.com/storybookjs/storybook/issues/5919
+
+---

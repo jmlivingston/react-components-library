@@ -1,10 +1,9 @@
 {
   "name": "jl-react-components-library",
   "version": "0.0.10",
-  "main": "dist/index.js",
   "scripts": {
-    "prebuild": "node --experimental-modules scripts/preBuild.mjs",
-    "build": "webpack --mode=production",
+    "build": "rollup -c",
+    "prepublish": "npm run build",
     "start": "start-storybook -p 4000 --quiet --ci",
     "test:dev": "jest --watch",
     "test": "jest",
@@ -24,43 +23,45 @@
     "@babel/plugin-proposal-object-rest-spread": "7.4.4",
     "@babel/preset-env": "7.4.5",
     "@babel/preset-react": "7.0.0",
-    "@storybook/addon-a11y": "5.1.1",
-    "@storybook/addon-actions": "5.1.1",
+    "@storybook/addon-a11y": "5.1.3",
+    "@storybook/addon-actions": "5.1.3",
     "@storybook/addon-info": "4.1.11",
-    "@storybook/addon-links": "5.1.1",
-    "@storybook/addon-storysource": "5.1.1",
-    "@storybook/addon-viewport": "5.1.1",
-    "@storybook/addons": "5.1.1",
-    "@storybook/react": "5.1.1",
+    "@storybook/addon-links": "5.1.3",
+    "@storybook/addon-storysource": "5.1.3",
+    "@storybook/addon-viewport": "5.1.3",
+    "@storybook/addons": "5.1.3",
+    "@storybook/react": "5.1.3",
     "@storybook/storybook-deployer": "2.8.1",
     "@testing-library/react": "8.0.1",
-    "babel-eslint": "10.0.1",
-    "babel-jest": "24.8.0",
+    "babel-eslint": "9.0.0",
     "babel-loader": "8.0.6",
     "css-loader": "2.1.1",
     "eslint": "5.16.0",
-    "eslint-config-react-app": "4.0.1",
-    "eslint-plugin-flowtype": "3.9.1",
-    "eslint-plugin-import": "2.17.3",
-    "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react-app": "4.0.1",
     "eslint-plugin-react-hooks": "1.6.0",
     "husky": "2.3.0",
     "jest": "24.8.0",
     "jest-dom": "3.4.0",
     "lint-staged": "8.1.7",
-    "mini-css-extract-plugin": "0.5.0",
     "node-sass": "4.12.0",
     "prettier": "1.17.1",
     "prop-types": "15.7.2",
     "react-hooks-testing-library": "0.5.1",
     "react-test-renderer": "16.8.6",
+    "rimraf": "2.6.3",
+    "rollup": "1.1.2",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.2.0",
+    "rollup-plugin-node-resolve": "4.0.0",
+    "rollup-plugin-postcss": "2.0.3",
+    "rollup-plugin-terser": "5.0.0",
     "sass": "1.20.3",
     "sass-loader": "7.1.0",
-    "style-loader": "0.23.1",
-    "webpack": "4.32.2",
-    "webpack-cli": "^3.3.2"
+    "style-loader": "0.23.1"
   },
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
@@ -92,16 +93,18 @@
     }
   },
   "eslintConfig": {
-    "extends": "react-app",
+    "extends": [
+      "plugin:react-app/recommended"
+    ],
     "plugins": [
       "react-hooks"
     ],
     "rules": {
       "no-console": 1,
-      "react/default-props-match-prop-types": 1,
-      "react/no-unused-prop-types": 1,
-      "react/prop-types": 1,
-      "react/sort-prop-types": 1,
+      "react-app/react/default-props-match-prop-types": 1,
+      "react-app/react/no-unused-prop-types": 1,
+      "react-app/react/prop-types": 1,
+      "react-app/react/sort-prop-types": 1,
       "react-hooks/rules-of-hooks": "error"
     },
     "settings": {

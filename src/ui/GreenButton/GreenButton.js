@@ -1,6 +1,6 @@
+import styles from './GreenButton.module.scss'
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './GreenButton.module.scss'
 
 function GreenButton({ onClick, text }) {
   return (
