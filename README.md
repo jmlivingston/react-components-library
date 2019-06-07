@@ -1,15 +1,10 @@
-# react-components-library
-
-## TLDR
-
-- `npm i`
-- `npm start`
-
----
+# jl-react-components-library
 
 ## Summary
 
-The goal of this library is to provide a starting point for creating a reusable React component library with following capabilities:
+This is a starting point for developing a reusable React component library using [Storybook](https://storybook.js.org) and [Rollup](https://rollupjs.org).
+
+### Capabilities
 
 - Develop and debug - Storybook
 - Style - supports css, scss, module.css, and module.scss
@@ -38,11 +33,15 @@ The goal of this library is to provide a starting point for creating a reusable 
 
 `npm run build`
 
-> Note: The scripts/preBuild.mjs script creates an index.js file on the fly before the build.
+> Note: See rollup.config.js for more information.
 
 ## Publish
 
-`npm publish`
+`npm publish dist`
+
+## Deploy Style Guide
+
+`npm run`
 
 > Note: Defaults to GitHub Pages and assumes git is initialized with a GitHub repository. To remove, delete deploy-style-guide in package.json scripts and uninstall @storybook/storybook-deployer.
 
@@ -58,10 +57,10 @@ This project uses a basic [webpack](https://webpack.js.org) configuration for bu
 
 > Note: This is a general guide. If using the create-component script, code in scripts/createComponent will need to be updated.
 
-- PascalCase - Component names and any component related file names (.js, .spec.js, .stories.js, .css, .module.css, .scss, .module.scss)
-- SNAKE_CASE (upper cased) - constant files and variables within.
-- kebab-case - CSS and SASS class and id names.
-- camelCase - All other functions and variable names.
+- PascalCase - Component names, component parent folders, and any component related file names (.js, .spec.js, .stories.js, .css, .module.css, .scss, .module.scss)
+- SNAKE_CASE (upper cased) - constant files and constant variables within.
+- kebab-case - class and id names for CSS or SASS.
+- camelCase - class and id names for CSS modules or SASS modules. All other functions, variables, and folders.
 
 ---
 
@@ -120,9 +119,19 @@ To create new components, you can use the following to generate the component, s
 
 ---
 
+## Links
+
+- [Documentation](https://jmlivingston.github.io/react-components-library)
+- [GitHub Repository](https://github.com/jmlivingston/react-components-library)
+- [npm package](https://www.npmjs.com/package/jl-react-components-library)
+- [Sample Project](https://github.com/jmlivingston/react-components-library-example-cra)
+
+---
+
 ## TODO
 
 - Move createComponents to it's own package
+- Update README_PACKAGE.md
 - Storybook bug - shows accessibility errors on CSS Modules.
 - Storybook bug - shows accessibility errors on root elements
 - Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.

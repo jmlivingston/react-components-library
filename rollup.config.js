@@ -1,3 +1,4 @@
+import fs from 'fs'
 import path from 'path'
 import rimraf from 'rimraf'
 import babel from 'rollup-plugin-babel'
@@ -6,8 +7,35 @@ import resolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
 import { getFilesFolders } from './scripts/utils.mjs'
+import { writeFileSync } from 'fs'
+import packageJson from './package.json'
 
-rimraf.sync(path.join(__dirname, 'dist'))
+const distDirectory = path.join(__dirname, 'dist')
+
+// Clean dist
+rimraf.sync(distDirectory)
+fs.mkdirSync(distDirectory)
+
+// Copy README and create package.json
+fs.copyFileSync(path.join(__dirname, 'README_PACKAGE.md'), path.join(distDirectory, 'README.md'))
+fs.writeFileSync(
+  path.join(distDirectory, 'package.json'),
+  JSON.stringify(
+    {
+      name: packageJson.name,
+      description: packageJson.description,
+      version: packageJson.version,
+      author: packageJson.author,
+      license: packageJson.license,
+      repository: packageJson.repository,
+      keywords: packageJson.keywords,
+      dependencies: packageJson.dependencies,
+      peerDependencies: packageJson.peerDependencies
+    },
+    null,
+    2
+  )
+)
 
 const fileFilter = file => {
   return (

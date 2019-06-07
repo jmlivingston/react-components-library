@@ -1,19 +1,18 @@
 {
   "name": "jl-react-components-library",
-  "version": "0.0.10",
+  "version": "0.0.23",
   "scripts": {
     "build": "rollup -c",
     "start": "start-storybook -p 4000 --quiet --ci",
     "test:dev": "jest --watch",
     "test": "jest",
-    "build-style-guide": "build-storybook",
+    "predeploy-style-guide": "npm run build-style-guide",
     "deploy-style-guide": "storybook-to-ghpages",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged",
     "create-component": "node --experimental-modules scripts/createComponent/create.mjs $*"
   },
   "dependencies": {
-    "lodash": "4.17.11",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
@@ -42,6 +41,7 @@
     "jest": "24.8.0",
     "jest-dom": "3.4.0",
     "lint-staged": "8.1.7",
+    "lodash": "4.17.11",
     "node-sass": "4.12.0",
     "prettier": "1.17.1",
     "prop-types": "15.7.2",
@@ -58,12 +58,9 @@
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1"
   },
-  "files": [
-    "dist"
-  ],
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "16.*",
+    "react-dom": "16.*"
   },
   "babel": {
     "plugins": [
@@ -131,7 +128,10 @@
   },
   "description": "Boilerplate for creating React component libraries.",
   "keywords": [
-    "react"
+    "react",
+    "storybook",
+    "rollup",
+    "webpack"
   ],
   "author": "jmlivingston@gmail.com",
   "license": "ISC",
