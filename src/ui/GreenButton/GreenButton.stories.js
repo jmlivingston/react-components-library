@@ -9,8 +9,7 @@ storiesOf('GreenButton', module).add(
   () => <GreenButton text="This is a green button" onClick={action('button-click')} />,
   {
     info: {
-      text: 'This is some extra information about this GreenButton component.',
-      inline: true
+      text: "import GreenButton from 'jl-react-components-library/cjs/ui/GreenButton'"
     }
   }
 )

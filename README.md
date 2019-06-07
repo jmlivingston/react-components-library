@@ -41,15 +41,15 @@ This is a starting point for developing a reusable React component library using
 
 ## Deploy Style Guide
 
-`npm run`
+`npm run publish-documentation`
 
-> Note: Defaults to GitHub Pages and assumes git is initialized with a GitHub repository. To remove, delete deploy-style-guide in package.json scripts and uninstall @storybook/storybook-deployer.
+> Note: Defaults to GitHub Pages and assumes git is initialized with a GitHub repository. To remove, delete publish-documentation in package.json scripts and uninstall @storybook/storybook-deployer.
 
 ---
 
 ## Configuration
 
-This project uses a basic [webpack](https://webpack.js.org) configuration for building, GitHub pages for publishing, and Storybook for developing, debugging and a creating the style guide. For build configuration, see the root level webpack.config.js. For Storybook, use the configuration under the .storybook folder.
+This project uses a basic [webpack](https://webpack.js.org) configuration for building, GitHub pages for publishing, and Storybook for developing, debugging and a creating the documentation. For build configuration, see the root level webpack.config.js. For Storybook, use the configuration under the .storybook folder.
 
 ---
 
