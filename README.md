@@ -4,42 +4,52 @@
 
 This is a starting point for developing a reusable React component library using [Storybook](https://storybook.js.org) and [Rollup](https://rollupjs.org).
 
-### Capabilities
+---
 
-- Develop and debug - Storybook
+## Features
+
+- Develop and debug - [Storybook](https://storybook.js.org)
 - Style - supports css, scss, module.css, and module.scss
-- Build - Rollup
+- Build - [Rollup](https://rollupjs.org)
 - Publish - npm
-- Document - Storybook
+- Document - [Storybook](https://storybook.js.org)
 - Test - Jest, @testing-library/react
 - Lint - create-react-app
 - Formatting - prettier
 
-> Note: For creating an application, as opposed to a "component library", we recommend [create-react-app](https://facebook.github.io/create-react-app) for SPAs or [Next.js](https://nextjs.org) for SSRs.
+> Note: For applications, use [create-react-app](https://facebook.github.io/create-react-app) or [Next.js](https://nextjs.org).
 
 ---
 
 ## Install
 
-- Clone this repository
-- Change the name in package.json
-- Run `npm i`
+`git clone https://jmlivingston.github.io/react-components-library`
+
+`cd react-component-library`
+
+`npm i`
+
+---
 
 ## Start
 
 `npm start`
 
+---
+
 ## Build
 
 `npm run build`
 
-> Note: See rollup.config.js for more information.
+---
 
-## Publish
+## Publish Package
 
 `npm publish dist`
 
-## Deploy Style Guide
+---
+
+## Publish Documentation
 
 `npm run publish-documentation`
 
@@ -49,13 +59,14 @@ This is a starting point for developing a reusable React component library using
 
 ## Configuration
 
-This project uses a basic [webpack](https://webpack.js.org) configuration for building, GitHub pages for publishing, and Storybook for developing, debugging and a creating the documentation. For build configuration, see the root level webpack.config.js. For Storybook, use the configuration under the .storybook folder.
+- Development - [Storybook](https://storybook.js.org)
+- Build - [Rollup](https://rollupjs.org)
+- Documentation - [Storybook](https://storybook.js.org)
+- Hosting - [GitHub Pages](https://pages.github.com)
 
 ---
 
-## Naming Conventions
-
-> Note: This is a general guide. If using the create-component script, code in scripts/createComponent will need to be updated.
+## Naming
 
 - PascalCase - Component names, component parent folders, and any component related file names (.js, .spec.js, .stories.js, .css, .module.css, .scss, .module.scss)
 - SNAKE_CASE (upper cased) - constant files and constant variables within.
@@ -64,25 +75,25 @@ This project uses a basic [webpack](https://webpack.js.org) configuration for bu
 
 ---
 
-## Folder Structure
+## Folders
 
 This project tries to stay flat as possible, but can be easily changed or extended. All source code is under src. All component related files, including styling, tests, and stories are contained under src/components within a component folder. Storybook configuration is in .storybook by convention and is built under storybook-static. Build is generated under dist.
 
 ---
 
-## Lint Rules
+## Lint
 
 These are based on create-react-app with a few extras in package.json under eslintConfig. Husky and lint-staged is used to prevent commits when any lint rules or errors are broken.
 
 ---
 
-## Formatting Rules
+## Format
 
 Prettier is used and is configured under prettier in package.json. Husky and lint-staged is used to format before commits.
 
 ---
 
-## Testing
+## Test
 
 Jest, react-testing-library, and react-hooks-testing-library are used for testing.
 
@@ -142,6 +153,6 @@ To create new components, you can use the following to generate the component, s
 
 The following come up as warnings, but we don't need to add.
 
-- @emotion/core - Storybook bug - https://github.com/storybookjs/storybook/issues/5919
+- @emotion/core - Storybook bug - [https://github.com/storybookjs/storybook/issues/5919](https://github.com/storybookjs/storybook/issues/5919)
 
 ---

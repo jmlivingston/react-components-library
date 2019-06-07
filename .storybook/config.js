@@ -5,7 +5,11 @@ import { addDecorator, addParameters, configure } from '@storybook/react'
 addDecorator(withInfo)
 addDecorator(withA11y)
 addParameters({
+  options: {
+    isToolshown: true
+  },
   info: {
+    header: false,
     inline: true
   }
 })

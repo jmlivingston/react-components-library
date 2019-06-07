@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { storiesOf } from '@storybook/react'
 import React from 'react'
+import readMe from '../../README.md'
 
 const Welcome = () => (
   <div style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
@@ -21,8 +22,14 @@ const Welcome = () => (
 
 export default Welcome
 
-storiesOf('Welcome', module).add('Installation', () => <Welcome />, {
+storiesOf('Welcome', module).add('Read Me', () => null, {
+  options: {
+    isToolshown: false,
+    showAddonPanel: false
+  },
   info: {
-    disable: true
+    header: false,
+    text: `${readMe}`,
+    source: false
   }
 })

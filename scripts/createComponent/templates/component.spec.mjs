@@ -3,8 +3,8 @@ import React from 'react'
 import ${name} from './${name}'
 
 describe('${name}', () => {
-  test('finds TODO', () => {
-    const { getByText } = render(<${name} />)
+  test('finds ${content}', () => {
+    const { getByText } = render(<${name} text={'${content}'} />)
     expect(getByText('${content}'))
   })
 })

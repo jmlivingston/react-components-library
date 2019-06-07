@@ -17,7 +17,7 @@ if (!args.name) {
 } else {
   // Normalize casing and set defaults
   args.name = args.name[0].toUpperCase() + args.name.slice(1)
-  args.dir = args.dir || _camelCase(args.name)
+  args.dir = args.dir || args.name[0].toUpperCase() + args.name.slice(1)
   args.isEmpty = args.isEmpty || false
   args.styleExtension = args.styleExtension || 'module.scss' // Options: css, module.css, scss, module.scss
   args.content = `TODO: ${args.name}`
@@ -27,11 +27,11 @@ if (!args.name) {
   const spec = specTemplate(args)
   const stories = storiesTemplate(args)
 
-  const basePath = path.join(__dirname, `../src/components/${_camelCase(args.name)}/`)
-  const componentPath = path.join(`${basePath}${args.name}.js`)
-  const scssPath = path.join(`${basePath}${args.name}.${args.styleExtension}`)
-  const specPath = path.join(`${basePath}${args.name}.spec.js`)
-  const storiesPath = path.join(`${basePath}${args.name}.stories.js`)
+  const basePath = path.join(__dirname, `../src/ui/${args.dir}`)
+  const componentPath = path.join(basePath, `${args.name}.js`)
+  const scssPath = path.join(basePath, `${args.name}.${args.styleExtension}`)
+  const specPath = path.join(basePath, `${args.name}.spec.js`)
+  const storiesPath = path.join(basePath, `${args.name}.stories.js`)
 
   if (!fs.existsSync(basePath)) {
     fs.mkdirSync(componentPath.replace(path.basename(componentPath), ''))

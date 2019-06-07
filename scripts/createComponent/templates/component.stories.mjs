@@ -2,13 +2,15 @@ const storyTemplate = ({ content, isEmpty, name }) => `/* eslint-disable no-cons
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import ${name} from './${name}'
+import baseOptions from '../../documentation/baseOptions'
 
 storiesOf('${name}', module).add(
-  'Default', 
+  '${name}', 
   () => <${name} ${isEmpty ? '' : `text="${content}"`} />,
   {
+    ...baseOptions,
     info: {
-      text: 'This is some extra information about this ${name} component.',
+      text: "import ${name} from 'jl-react-components-library/cjs/ui/${name}'",
       inline: true
     }
   }
