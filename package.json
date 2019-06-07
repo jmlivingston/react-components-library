@@ -3,7 +3,6 @@
   "version": "0.0.10",
   "scripts": {
     "build": "rollup -c",
-    "prepublish": "npm run build",
     "start": "start-storybook -p 4000 --quiet --ci",
     "test:dev": "jest --watch",
     "test": "jest",
