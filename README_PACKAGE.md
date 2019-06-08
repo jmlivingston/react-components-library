@@ -11,7 +11,7 @@ This is a package for testing a reusable React component library using [Storyboo
 ```js
 import BlueButton from 'jl-react-components-library/cjs/ui/BlueButton' // commonjs
 
-import BlueButton from 'jl-react-components-library/cjs/ui/BlueButton' // ES modules
+import BlueButton from 'jl-react-components-library/es/ui/BlueButton' // ES modules
 ```
 
 ```html
