@@ -11,7 +11,7 @@
     "start-documentation": "npx http-server storybook-static",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged",
-    "create-component": "node --experimental-modules scripts/createComponent/create.mjs $*"
+    "create-component": "node --experimental-modules scripts/create.mjs $*"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -44,6 +44,7 @@
     "lint-staged": "8.1.7",
     "lodash": "4.17.11",
     "node-sass": "4.12.0",
+    "plop": "2.3.0",
     "prettier": "1.17.1",
     "prop-types": "15.7.2",
     "react-hooks-testing-library": "0.5.1",
