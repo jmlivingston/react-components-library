@@ -1,18 +1,11 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { addDecorator, addParameters, configure } from '@storybook/react'
+import baseOptions from '../src/documentation/baseOptions'
 
 addDecorator(withInfo)
 addDecorator(withA11y)
-addParameters({
-  options: {
-    isToolshown: true
-  },
-  info: {
-    header: false,
-    inline: true
-  }
-})
+addParameters(baseOptions)
 
 require('../src/documentation/documentation.stories')
 

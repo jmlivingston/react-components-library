@@ -1,8 +1,8 @@
 import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import BlueButton from './BlueButton'
 import baseOptions from '../../documentation/baseOptions'
+import BlueButton from './BlueButton'
 
 storiesOf('Buttons', module).add(
   'BlueButton',
@@ -10,6 +10,7 @@ storiesOf('Buttons', module).add(
   {
     ...baseOptions,
     info: {
+      ...baseOptions.info,
       text: "import BlueButton from 'jl-react-components-library/cjs/ui/BlueButton'"
     }
   }

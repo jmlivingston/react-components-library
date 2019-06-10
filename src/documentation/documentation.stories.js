@@ -24,7 +24,7 @@ export default Welcome
 storiesOf('Welcome', module).add('Read Me', () => null, {
   options: {
     isToolshown: false,
-    showAddonPanel: false
+    showPanel: false
   },
   info: {
     header: false,

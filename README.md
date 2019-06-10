@@ -141,11 +141,16 @@ To create new components, you can use the following to generate the component, s
 
 ## TODO
 
+- Run storybook in DEV mode hiding info
 - Rollup package.json plugin, instead of custom
 - Rollup size plugin
+
+Storybook bugs
+
 - Storybook bug - shows accessibility errors on CSS Modules.
 - Storybook bug - shows accessibility errors on root elements
 - Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.
+- Storybook bug - No way to add document.title without a hack. Currently using manager-head.html per [https://github.com/storybookjs/storybook/issues/6339](https://github.com/storybookjs/storybook/issues/6339)
 
 ---
 

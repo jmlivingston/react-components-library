@@ -1,0 +1,13 @@
+<script>
+  const title = 'jl-react-components-library'
+  document.title = title
+  new MutationObserver(mutations => {
+    if (document.title.match(/Storybook$/)) {
+      document.title = title
+    }
+  }).observe(document.querySelector('title'), {
+    childList: true,
+    subtree: true,
+    characterData: true
+  })
+</script>

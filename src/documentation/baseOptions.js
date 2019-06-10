@@ -1,7 +1,10 @@
 const baseOptions = {
   options: {
     isToolshown: true,
-    showAddonPanel: true
+    showPanel: true,
+    theme: {
+      brandTitle: 'Style Guide'
+    }
   },
   info: {
     header: false,
