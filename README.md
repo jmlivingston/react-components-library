@@ -103,9 +103,9 @@ Jest, react-testing-library, and react-hooks-testing-library are used for testin
 
 ### Create New Component
 
-To create new components, you can use the following to generate the component, styles, stories, and spec. To customize this, scripts/createComponent can be updated.
+To create new components, you can use the following to generate the component, styles, stories, and spec. This uses [Plop](https://plopjs.com/) and can be customized under scripts/templates.
 
-`npm run create-component -- name=fooBar`
+`npm run generate`
 
 #### Options
 
@@ -141,7 +141,6 @@ To create new components, you can use the following to generate the component, s
 
 ## TODO
 
-- Ensure build can handle import of .md
 - Storybook bug - shows accessibility errors on CSS Modules.
 - Storybook bug - shows accessibility errors on root elements
 - Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.

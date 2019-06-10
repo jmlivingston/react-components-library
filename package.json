@@ -1,6 +1,6 @@
 {
   "name": "jl-react-components-library",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "scripts": {
     "build": "rollup -c",
     "start": "start-storybook -p 4000 --quiet --ci",
@@ -11,7 +11,6 @@
     "start-documentation": "npx http-server storybook-static",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
     "precommit": "lint-staged",
-    "create-component": "node --experimental-modules scripts/create.mjs $*",
     "generate": "node --experimental-modules node_modules/.bin/plop --plopfile scripts/templates/index.js"
   },
   "dependencies": {
@@ -80,11 +79,12 @@
     "singleQuote": true
   },
   "jest": {
+    "rootDir": "src",
     "setupFilesAfterEnv": [
       "@testing-library/react/cleanup-after-each"
     ],
     "moduleNameMapper": {
-      "\\.(css|scss)$": "<rootDir>/src/style.mock.js"
+      "\\.(css|scss)$": "<rootDir>/style.mock.js"
     },
     "transform": {
       ".+\\.js$": "babel-jest"

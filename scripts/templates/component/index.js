@@ -9,7 +9,7 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'What should it be called?',
-      default: 'Test'
+      default: 'FooBar'
     }
   ],
   actions: () => {

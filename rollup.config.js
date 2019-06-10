@@ -39,9 +39,10 @@ fs.writeFileSync(
 const fileFilter = file => {
   return (
     file.includes('.js') &&
+    !file.includes('src/documentation') &&
     !file.includes('.css') &&
     !file.includes('.mock.js') &&
-    !file.includes('.spec.js') &&
+    !file.includes('.test.js') &&
     !file.includes('.stories.js')
   )
 }
