@@ -1,6 +1,6 @@
 {
   "name": "jl-react-components-library",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "scripts": {
     "build": "rollup -c",
     "start": "start-storybook -p 4000 --quiet --ci",

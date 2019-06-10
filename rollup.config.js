@@ -42,7 +42,7 @@ const fileFilter = file => {
     !file.includes('src/documentation') &&
     !file.includes('.css') &&
     !file.includes('.mock.js') &&
-    !file.includes('.spec.js') &&
+    !file.includes('.test.js') &&
     !file.includes('.stories.js')
   )
 }

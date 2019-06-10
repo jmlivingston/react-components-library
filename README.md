@@ -68,7 +68,7 @@ This is a starting point for developing a reusable React component library using
 
 ## Naming
 
-- PascalCase - Component names, component parent folders, and any component related file names (.js, .spec.js, .stories.js, .css, .module.css, .scss, .module.scss)
+- PascalCase - Component names, component parent folders, and any component related file names (.js, .test.js, .stories.js, .css, .module.css, .scss, .module.scss)
 - SNAKE_CASE (upper cased) - constant files and constant variables within.
 - kebab-case - class and id names for CSS or SASS.
 - camelCase - class and id names for CSS modules or SASS modules. All other functions, variables, and folders.
@@ -103,7 +103,7 @@ Jest, react-testing-library, and react-hooks-testing-library are used for testin
 
 ### Create New Component
 
-To create new components, you can use the following to generate the component, styles, stories, and spec. This uses [Plop](https://plopjs.com/) and can be customized under scripts/templates.
+To create new components, you can use the following to generate the component, styles, stories, and test. This uses [Plop](https://plopjs.com/) and can be customized under scripts/templates.
 
 `npm run generate`
 
