@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import Test from './Test'

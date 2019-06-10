@@ -6,9 +6,8 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
-import { getFilesFolders } from './scripts/utils.mjs'
-import { writeFileSync } from 'fs'
 import packageJson from './package.json'
+import { getFilesFolders } from './scripts/utils'
 
 const distDirectory = path.join(__dirname, 'dist')
 

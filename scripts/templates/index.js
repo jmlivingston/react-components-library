@@ -1,26 +1,50 @@
 const fs = require('fs')
 const path = require('path')
-const { execSync } = require('child_process')
+const prettier = require('prettier')
+
 const componentGenerator = require('./component/index.js')
+const packageJson = require('../../package.json')
 
 module.exports = plop => {
   plop.setGenerator('component', componentGenerator)
-  plop.setActionType('prettify', (answers, config) => {
-    const folderPath = `${path.join(
-      __dirname,
-      '/../../app/',
-      config.path,
-      plop.getHelper('properCase')(answers.name),
-      '**',
-      '**.js'
-    )}`
+  plop.setActionType('prettify', (answers, config, plop) => {
+    const folderPath = `${path.join(__dirname, '../../src/ui', plop.getHelper('pascalCase')(answers.name))}`
+    fs.readdirSync(folderPath).forEach(file => {
+      const fileName = path.join(folderPath, file)
+      let parser = 'babel'
+      switch (path.extname(fileName)) {
+        case '.js':
+        case '.mjs':
+          parser = 'babel'
+          break
+        case '.css':
+        case '.scss':
+          parser = 'css'
+          break
+        case '.json':
+          parser = 'json'
+          break
+        case '.md':
+          parser = 'markdown'
+          break
+        case '.html':
+          parser = 'html'
+          break
+        default:
+          parser = 'babel'
+      }
+      const prettierConfig = {
+        ...packageJson.prettier,
+        parser
+      }
+      const fileString = fs.readFileSync(fileName).toString()
+      const prettierString = prettier.format(fileString, prettierConfig)
+      fs.writeFileSync(fileName, prettierString)
+    })
     try {
-      execSync(`npm run prettify -- "${folderPath}"`)
       return folderPath
     } catch (err) {
       throw err
     }
   })
 }
-
-module.exports.BACKUPFILE_EXTENSION = BACKUPFILE_EXTENSION

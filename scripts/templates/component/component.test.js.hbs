@@ -1,0 +1,12 @@
+/* eslint-disable no-console */
+import { render } from '@testing-library/react'
+import React from 'react'
+import {{ pascalCase name }} from './{{ pascalCase name }}'
+
+describe('{{ pascalCase name }}', () => {
+test('finds TODO: {{ pascalCase name }}', () => {
+const { getByText } = render(
+<{{ pascalCase name }} text={'TODO: {{ pascalCase name }}'} />)
+expect(getByText('TODO: {{ pascalCase name }}'))
+})
+})

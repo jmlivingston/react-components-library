@@ -141,8 +141,7 @@ To create new components, you can use the following to generate the component, s
 
 ## TODO
 
-- Move createComponents to it's own package
-- Update README_PACKAGE.md
+- Ensure build can handle import of .md
 - Storybook bug - shows accessibility errors on CSS Modules.
 - Storybook bug - shows accessibility errors on root elements
 - Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.
