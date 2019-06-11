@@ -12,7 +12,7 @@ storiesOf('Buttons', module).add(
     ...baseConfig.options,
     info: {
       ...baseConfig.options.info,
-      text: `import BlueButton from '${packageJson}/cjs/ui/BlueButton'`
+      text: `import BlueButton from '${packageJson.name}/cjs/ui/BlueButton'`
     }
   }
 )

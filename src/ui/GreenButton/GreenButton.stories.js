@@ -12,7 +12,7 @@ storiesOf('Buttons', module).add(
     ...baseConfig.options,
     info: {
       ...baseConfig.options.info,
-      text: `import GreenButton from '${packageJson}/cjs/ui/GreenButton'`
+      text: `import GreenButton from '${packageJson.name}/cjs/ui/GreenButton'`
     }
   }
 )

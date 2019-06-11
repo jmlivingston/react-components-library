@@ -1,14 +1,15 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import {{ pascalCase name }} from './{{ pascalCase name }}'
 import baseConfig from '../../../.storybook/baseConfig'
+import packageJson from '../../../package.json'
+import {{ pascalCase name }} from './{{ pascalCase name }}'
 
 storiesOf('{{ pascalCase name }}', module).add('{{ pascalCase name }}', () =>
   <{{ pascalCase name }} text="TODO: {{ pascalCase name }}" />, {
     ...baseConfig.options,
     info: {
       ...baseConfig.options.info,
-      text: "import {{ pascalCase name }} from 'jl-react-components-library/cjs/ui/{{ pascalCase name }}'",
+      text: `import {{ pascalCase name }} from '${packageJson.name}/cjs/ui/{{ pascalCase name }}'`,
     }
   }
 )

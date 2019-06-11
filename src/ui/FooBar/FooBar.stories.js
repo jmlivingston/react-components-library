@@ -8,6 +8,6 @@ storiesOf('FooBar', module).add('FooBar', () => <FooBar text="TODO: FooBar" />, 
   ...baseConfig.options,
   info: {
     ...baseConfig.options.info,
-    text: `import FooBar from '${packageJson}/cjs/ui/FooBar'`
+    text: `import FooBar from '${packageJson.name}/cjs/ui/FooBar'`
   }
 })
