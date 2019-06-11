@@ -1,12 +1,16 @@
 {
   "name": "jl-react-components-library",
   "version": "0.0.26",
+  "config": {
+    "title": "JL Style Guide"
+  },
   "scripts": {
     "build": "rollup -c",
-    "start": "start-storybook -p 4000 --quiet --ci",
+    "start": "cross-env STORYBOOK_DEBUG=true start-storybook -p 4000 --quiet --ci",
+    "start:info": "start-storybook -p 4000 --quiet --ci",
     "test:dev": "jest --watch",
     "test": "jest",
-    "prepublish-documentationx": "build-storybook",
+    "prepublish-documentation": "build-storybook",
     "publish-documentation": "storybook-to-ghpages",
     "start-documentation": "npx http-server storybook-static",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
@@ -34,6 +38,7 @@
     "@testing-library/react": "8.0.1",
     "babel-eslint": "9.0.0",
     "babel-loader": "8.0.6",
+    "cross-env": "5.2.0",
     "css-loader": "2.1.1",
     "eslint": "5.16.0",
     "eslint-plugin-react-app": "4.0.1",

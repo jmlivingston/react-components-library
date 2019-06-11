@@ -1,34 +1,20 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
+import baseConfig from '../../.storybook/baseConfig'
 import readMe from '../../README.md'
 
-const Welcome = () => (
-  <div style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
-    <h1>Installation</h1>
-    <div
-      style={{
-        backgroundColor: 'gray',
-        color: '#fff',
-        display: 'inline-block',
-        padding: '8px 16px',
-        borderRadius: '5px',
-        fontFamily: '"Lucida Console", Monaco, monospace'
-      }}>
-      npm i jl-react-components-library
-    </div>
-  </div>
-)
-
-export default Welcome
-
-storiesOf('Welcome', module).add('Read Me', () => null, {
+storiesOf('Welcome', module).add('Read Me', () => <div />, {
+  ...baseConfig.options,
   options: {
+    ...baseConfig.options.options,
     isToolshown: false,
     showPanel: false
   },
   info: {
-    header: false,
+    ...baseConfig.options.info,
     text: `${readMe}`,
+    inline: true,
+    disable: false,
     source: false
   }
 })

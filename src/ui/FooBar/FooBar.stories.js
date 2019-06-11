@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
-import baseOptions from '../../documentation/baseOptions'
+import baseConfig from '../../../.storybook/baseConfig'
 import FooBar from './FooBar'
 
 storiesOf('FooBar', module).add('FooBar', () => <FooBar text="TODO: FooBar" />, {
-  ...baseOptions,
+  ...baseConfig.options,
   info: {
-    ...baseOptions.info,
+    ...baseConfig.options.info,
     text: "import FooBar from 'jl-react-components-library/cjs/ui/FooBar'"
   }
 })
