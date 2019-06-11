@@ -4,8 +4,11 @@ import baseConfig from '../../../.storybook/baseConfig'
 import packageJson from '../../../package.json'
 import {{ pascalCase name }} from './{{ pascalCase name }}'
 
-storiesOf('{{ pascalCase name }}', module).add('{{ pascalCase name }}', () =>
-  <{{ pascalCase name }} text="TODO: {{ pascalCase name }}" />, {
+function {{ pascalCase name }}Demo() {
+  return <{{ pascalCase name }} text="TODO: {{ pascalCase name }}" />
+}
+
+storiesOf('{{ pascalCase name }}', module).add('{{ pascalCase name }}', {{ pascalCase name }}Demo, {
     ...baseConfig.options,
     info: {
       ...baseConfig.options.info,

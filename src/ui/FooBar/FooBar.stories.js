@@ -4,7 +4,11 @@ import baseConfig from '../../../.storybook/baseConfig'
 import packageJson from '../../../package.json'
 import FooBar from './FooBar'
 
-storiesOf('FooBar', module).add('FooBar', () => <FooBar text="TODO: FooBar" />, {
+function FooBarDemo() {
+  return <FooBar text="TODO: FooBar" />
+}
+
+storiesOf('FooBar', module).add('FooBar', FooBarDemo, {
   ...baseConfig.options,
   info: {
     ...baseConfig.options.info,

@@ -1,21 +1,15 @@
 # jl-react-components-library
 
-## Summary
-
-This is a package for testing a reusable React component library using [Storybook](https://storybook.js.org) and [Rollup](https://rollupjs.org).
-
----
-
 ## Basic Usage
 
 ```js
-import BlueButton from 'jl-react-components-library/cjs/ui/BlueButton' // commonjs
+import MyComponent from 'jl-react-components-library/cjs/ui/MyComponent' // commonjs
 
-import BlueButton from 'jl-react-components-library/es/ui/BlueButton' // ES modules
+import MyComponent from 'jl-react-components-library/es/ui/MyComponent' // ES modules
 ```
 
 ```html
-<BluButton onClick={() => {}}>Test</BlueButton>
+<MyComponent onClick={() => {}}>Test</MyComponent>
 ```
 
 ---

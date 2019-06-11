@@ -5,14 +5,14 @@ import baseConfig from '../../../.storybook/baseConfig'
 import packageJson from '../../../package.json'
 import GreenButton from './GreenButton'
 
-storiesOf('Buttons', module).add(
-  'GreenButton',
-  () => <GreenButton text="This is a green button" onClick={action('button-click')} />,
-  {
-    ...baseConfig.options,
-    info: {
-      ...baseConfig.options.info,
-      text: `import GreenButton from '${packageJson.name}/cjs/ui/GreenButton'`
-    }
+function GreenButtonDemo() {
+  return <GreenButton text="This is a blue button" onClick={action('button-click')} />
+}
+
+storiesOf('Buttons', module).add('GreenButton', GreenButtonDemo, {
+  ...baseConfig.options,
+  info: {
+    ...baseConfig.options.info,
+    text: `import BlueButton from '${packageJson.name}/cjs/ui/BlueButton'`
   }
-)
+})

@@ -1,9 +1,6 @@
 {
   "name": "jl-react-components-library",
   "version": "0.0.26",
-  "config": {
-    "title": "JL Style Guide"
-  },
   "scripts": {
     "build": "rollup -c",
     "start": "cross-env STORYBOOK_DEBUG=true start-storybook -p 4000 --quiet --ci",

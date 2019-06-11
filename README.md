@@ -23,19 +23,21 @@ This is a starting point for developing a reusable React component library using
 
 ## Install
 
-`git clone https://jmlivingston.github.io/react-components-library`
+`git clone https://github.com/jmlivingston/react-components-library.git`
 
 `cd react-component-library`
 
 `npm i`
 
-> Note: To make this your own, replace the text "jl-react-component-library" in package.json, README_PACKAGE.md, and README.md files. There is several places where the package.json name property is used.
+> Note: To make this your own, replace the text "jl-react-components-library" in package.json, README_PACKAGE.md, and README.md files. There is several places where the package.json name property is used.
 
 ---
 
 ## Start
 
 `npm start`
+
+`npm start:info` - This starts with additional Storybook plugins enabled and is good for testing documentation, but not as good for debugging.
 
 ---
 
