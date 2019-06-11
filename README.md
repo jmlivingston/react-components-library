@@ -47,6 +47,16 @@ This is a starting point for developing a reusable React component library using
 
 ---
 
+## Styling
+
+This project allows CSS, SASS, CSS Modules, and SASS Modules. If you are importing from node_modules, you will need to prefix with a tilde `~`. SASS Example:
+
+```
+@import '~bootstrap/scss/_variables.scss'
+```
+
+---
+
 ## Publish Package
 
 `npm publish dist`
