@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import baseConfig from '../../../.storybook/baseConfig'
+import packageJson from '../../../package.json'
 import BlueButton from './BlueButton'
 
 storiesOf('Buttons', module).add(
@@ -11,7 +12,7 @@ storiesOf('Buttons', module).add(
     ...baseConfig.options,
     info: {
       ...baseConfig.options.info,
-      text: "import BlueButton from 'jl-react-components-library/cjs/ui/BlueButton'"
+      text: `import BlueButton from '${packageJson}/cjs/ui/BlueButton'`
     }
   }
 )

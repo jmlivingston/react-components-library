@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import baseConfig from '../../../.storybook/baseConfig'
+import packageJson from '../../../package.json'
 import GreenButton from './GreenButton'
 
 storiesOf('Buttons', module).add(
@@ -11,7 +12,7 @@ storiesOf('Buttons', module).add(
     ...baseConfig.options,
     info: {
       ...baseConfig.options.info,
-      text: "import GreenButton from 'jl-react-components-library/cjs/ui/GreenButton'"
+      text: `import GreenButton from '${packageJson}/cjs/ui/GreenButton'`
     }
   }
 )

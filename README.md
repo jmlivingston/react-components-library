@@ -11,13 +11,13 @@ This is a starting point for developing a reusable React component library using
 - Develop and debug - [Storybook](https://storybook.js.org)
 - Style - supports css, scss, module.css, and module.scss
 - Build - [Rollup](https://rollupjs.org)
-- Publish - npm
+- Publish - [npm](https://www.npmjs.com)
 - Document - [Storybook](https://storybook.js.org)
-- Test - Jest, @testing-library/react
-- Lint - create-react-app
-- Formatting - prettier
+- Test - [Jest](https://jestjs.io), [@testing-library/react](https://testing-library.com)
+- Lint - [create-react-app](https://www.npmjs.com/package/eslint-config-react-app)
+- Formatting - [prettier](https://prettier.io)
 
-> Note: For applications, use [create-react-app](https://facebook.github.io/create-react-app) or [Next.js](https://nextjs.org).
+> Note: For applications (as opposed to a "component library"), use [create-react-app](https://facebook.github.io/create-react-app) or [Next.js](https://nextjs.org).
 
 ---
 
@@ -28,6 +28,8 @@ This is a starting point for developing a reusable React component library using
 `cd react-component-library`
 
 `npm i`
+
+> Note: To make this your own, replace the text "jl-react-component-library" in package.json, README_PACKAGE.md, and README.md files. There is several places where the package.json name property is used.
 
 ---
 
@@ -53,16 +55,7 @@ This is a starting point for developing a reusable React component library using
 
 `npm run publish-documentation`
 
-> Note: Defaults to GitHub Pages and assumes git is initialized with a GitHub repository. To remove, delete publish-documentation in package.json scripts and uninstall @storybook/storybook-deployer.
-
----
-
-## Configuration
-
-- Development - [Storybook](https://storybook.js.org)
-- Build - [Rollup](https://rollupjs.org)
-- Documentation - [Storybook](https://storybook.js.org)
-- Hosting - [GitHub Pages](https://pages.github.com)
+> Note: Defaults to [GitHub Pages](https://pages.github.com) and assumes git is initialized with a GitHub repository. To remove, delete publish-documentation in package.json scripts and uninstall [@storybook/storybook-deployer](https://github.com/storybookjs/storybook-deployer).
 
 ---
 
@@ -79,11 +72,28 @@ This is a starting point for developing a reusable React component library using
 
 This project tries to stay flat as possible, but can be easily changed or extended. All source code is under src. All component related files, including styling, tests, and stories are contained under src/components within a component folder. Storybook configuration is in .storybook by convention and is built under storybook-static. Build is generated under dist.
 
+> Settings - .storybook
+
+---
+
+## Build
+
+Build uses [Rollup](https://rollupjs.org) to generate indepdendent component bundles based on the folder structure under src. Here are a few features:
+
+- All documentation, mock, styles, tests, and stories are filtered out.
+- An index is also created for components where they are the only component in the directory. For example: BlueButton/BlueButton becomes BlueButton/index.js in dist.
+- The dist package.json is created in rollup.config.js
+- The README_PACKAGE.md is copied over to dist as README.md.
+
+> Settings - rollup.config.js, README_PACKAGE.md
+
 ---
 
 ## Lint
 
-These are based on create-react-app with a few extras in package.json under eslintConfig. Husky and lint-staged is used to prevent commits when any lint rules or errors are broken.
+These are based on create-react-app's linting rules, whith a few minor tweaks. Husky and lint-staged is used to prevent commits when any lint rules or errors are broken.
+
+> Settings - package.json (eslintConfig, lint-staged, and husky)
 
 ---
 
@@ -91,11 +101,15 @@ These are based on create-react-app with a few extras in package.json under esli
 
 Prettier is used and is configured under prettier in package.json. Husky and lint-staged is used to format before commits.
 
+> Settings - package.json (eslintConfig, lint-staged, and husky)
+
 ---
 
 ## Test
 
-Jest, react-testing-library, and react-hooks-testing-library are used for testing.
+Jest, [@testing-library/react](https://testing-library.com), and [react-hooks-testing-library](https://github.com/mpeyper/react-hooks-testing-library) are used for testing.
+
+> Settings package.json (jest)
 
 ---
 
@@ -103,26 +117,15 @@ Jest, react-testing-library, and react-hooks-testing-library are used for testin
 
 ### Create New Component
 
-To create new components, you can use the following to generate the component, styles, stories, and test. This uses [Plop](https://plopjs.com/) and can be customized under scripts/templates.
+To create new components, you can use the following to generate the component, styles, stories, and test. This feature utilizes [Plop](https://plopjs.com/).
 
 `npm run generate`
 
-#### Options
-
-**Required**
-
-- name - Name of component. It will normalize to PascalCase
-
-**Optional**
-
-- dir - defaults to pascal casing of name i.e., "BlueButton".
-- isEmpty - defaults to false. Determines if dummy content is added.
-- styleExtension - defaults to module.scss. Other options: css, module.css, scss, and module.scss.
-- content - defaults to "TODO " and camel casing of name. Ignored if isEmpty is set to true.
+> Settings - scripts/templates
 
 ---
 
-## Alternatives
+## Alternatives tools for component libraries
 
 - [nwb](https://github.com/insin/nwb)
 - [neutrino](https://neutrinojs.org)
@@ -141,9 +144,6 @@ To create new components, you can use the following to generate the component, s
 
 ## TODO
 
-- Rollup package.json plugin, instead of custom
-- Rollup size plugin
-
 Storybook bugs
 
 - Storybook bug - shows accessibility errors on CSS Modules.
@@ -152,7 +152,7 @@ Storybook bugs
 
 ---
 
-## Peer Dependencies Notes
+## Peer Dependency Notes
 
 The following come up as warnings, but we don't need to add.
 

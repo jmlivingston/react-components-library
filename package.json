@@ -10,7 +10,7 @@
     "start:info": "start-storybook -p 4000 --quiet --ci",
     "test:dev": "jest --watch",
     "test": "jest",
-    "prepublish-documentation": "build-storybook",
+    "prepublish-documentation": "build-storybook -o storybook-static",
     "publish-documentation": "storybook-to-ghpages",
     "start-documentation": "npx http-server storybook-static",
     "lint": "node node_modules/eslint/bin/eslint.js --max-warnings=0 src",
@@ -41,7 +41,11 @@
     "cross-env": "5.2.0",
     "css-loader": "2.1.1",
     "eslint": "5.16.0",
-    "eslint-plugin-react-app": "4.0.1",
+    "eslint-config-react-app": "4.0.1",
+    "eslint-plugin-flowtype": "3.9.1",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-react": "7.13.0",
     "eslint-plugin-react-hooks": "1.6.0",
     "husky": "2.3.0",
     "jest": "24.8.0",
@@ -97,17 +101,17 @@
   },
   "eslintConfig": {
     "extends": [
-      "plugin:react-app/recommended"
+      "react-app"
     ],
     "plugins": [
       "react-hooks"
     ],
     "rules": {
       "no-console": 1,
-      "react-app/react/default-props-match-prop-types": 1,
-      "react-app/react/no-unused-prop-types": 1,
-      "react-app/react/prop-types": 1,
-      "react-app/react/sort-prop-types": 1,
+      "react/default-props-match-prop-types": 1,
+      "react/no-unused-prop-types": 1,
+      "react/prop-types": 1,
+      "react/sort-prop-types": 1,
       "react-hooks/rules-of-hooks": "error"
     },
     "settings": {
