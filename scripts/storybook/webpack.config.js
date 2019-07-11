@@ -2,7 +2,7 @@ function addCssModules({ config }) {
   config.module.rules = [
     ...config.module.rules.filter(rule => !rule.test.toString().includes('.css')), // Filter out existing css rules
     {
-      test: /\.module\.s(a|c)ss$/,
+      test: /\.module\.(s*)(a|c)ss$/,
       loader: [
         'style-loader',
         {
@@ -23,7 +23,7 @@ function addCssModules({ config }) {
       ]
     },
     {
-      test: /\.s(a|c)ss$/,
+      test: /\.(s*)(a|c)ss$/,
       exclude: /\.module.(s(a|c)ss)$/,
       loader: [
         'style-loader',

@@ -1,6 +1,18 @@
 # jl-react-components-library
 
+> **Audience:** Developer consuming this package.
+
+---
+
+## Install
+
+`npm i jl-react-components-library`
+
+---
+
 ## Basic Usage
+
+> Note: For full documentation, see link at the bottom of this page.
 
 ```js
 import MyComponent from 'jl-react-components-library/cjs/ui/MyComponent' // commonjs

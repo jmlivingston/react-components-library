@@ -1,12 +1,18 @@
 /* eslint-disable no-console */
 import { render } from '@testing-library/react'
 import React from 'react'
-import {{ pascalCase name }} from './{{ pascalCase name }}'
+import ReactDOM from 'react-dom'
+import {{ pascalCase componentName }} from './{{ pascalCase componentName }}'
 
-describe('{{ pascalCase name }}', () => {
-test('finds TODO: {{ pascalCase name }}', () => {
-const { getByText } = render(
-<{{ pascalCase name }} text={'TODO: {{ pascalCase name }}'} />)
-expect(getByText('TODO: {{ pascalCase name }}'))
-})
+describe('{{ pascalCase componentName }}', () => {
+  test('renders without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<{{ pascalCase componentName }} />, div)
+    ReactDOM.unmountComponentAtNode(div)
+  })
+  test('finds TODO: {{ pascalCase componentName }}', () => {
+    const { getByText } = render(
+    <{{ pascalCase componentName }} text={'TODO: {{ pascalCase componentName }}'} />)
+    expect(getByText('TODO: {{ pascalCase componentName }}'))
+  })
 })

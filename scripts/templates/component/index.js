@@ -1,19 +1,26 @@
 const path = require('path')
 
-const basePath = path.join(__dirname, '../../../src/ui')
+const basePath = path.join(__dirname, '../../../src/ui') // TODO: Add option to use core,  to
 
 module.exports = {
-  description: 'Add an unconnected component',
+  description: 'Add a component',
   prompts: [
     {
       type: 'input',
-      name: 'name',
-      message: 'What should it be called?',
+      name: 'componentName',
+      message: 'What is the name?',
       default: 'FooBar'
+    },
+    {
+      type: 'list',
+      name: 'componentType',
+      message: 'What is the type',
+      choices: ['core', 'report', 'compound'],
+      default: 'core'
     }
   ],
   actions: () => {
-    const baseName = path.join(basePath, '{{pascalCase name}}/{{pascalCase name}}')
+    const baseName = path.join(basePath, '{{componentType}}/{{pascalCase componentName}}/{{pascalCase componentName}}')
     const templateBaseName = './component/component'
     const fileExtensions = ['js', 'test.js', 'module.scss', 'stories.js']
 

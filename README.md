@@ -1,5 +1,7 @@
 # jl-react-components-library
 
+> **Audience:** Developer working in this repository.
+
 ## Summary
 
 This is a starting point for developing a reusable React component library using [Storybook](https://storybook.js.org) and [Rollup](https://rollupjs.org).
@@ -71,20 +73,32 @@ This project allows CSS, SASS, CSS Modules, and SASS Modules. If you are importi
 
 ---
 
-## Naming
+## Naming Conventions
 
-- PascalCase - Component names, component parent folders, and any component related file names (.js, .test.js, .stories.js, .css, .module.css, .scss, .module.scss)
-- SNAKE_CASE (upper cased) - constant files and constant variables within.
-- kebab-case - class and id names for CSS or SASS.
-- camelCase - class and id names for CSS modules or SASS modules. All other functions, variables, and folders.
+- **PascalCase** - Component names, component parent folders, and any component related file names (.js, .test.js, .stories.js, .css, .module.css, .scss, .module.scss)
+- **SNAKE_CASE** (upper cased) - constant files and constant variables within.
+- **kebab-case** - class and id names for CSS or SASS.
+- **camelCase** - class and id names for CSS modules or SASS modules. All other functions, variables, and folders.
 
 ---
 
 ## Folders
 
-This project tries to stay flat as possible, but can be easily changed or extended. All source code is under src. All component related files, including styling, tests, and stories are contained under src/components within a component folder. Storybook configuration is in .storybook by convention and is built under storybook-static. Build is generated under dist.
+This project aims to stay flat as possible, but can be easily changed or extended.
 
-> Settings - .storybook
+- **dist** - build directory
+- **storybook-static** - documentation build directory
+- **scripts** - this includes utilities, build, storybook, plop templates, and [Jest](https://jestjs.io) configuration
+- **src** - source code
+  - **constants** - shared constants
+  - **documentation** - Stories for high-level documentation
+  - **helpers** - shared helpers and hooks
+  - **resources** - localization resources and helpers
+  - **services** - API helpers and mock data
+  - **ui** - components, tests, stories, and style (SASS) files
+    - **core** - base components
+    - **report** - report components
+    - **compound** - components based on other components such as dashboards and pages
 
 ---
 
@@ -97,7 +111,14 @@ Build uses [Rollup](https://rollupjs.org) to generate indepdendent component bun
 - The dist package.json is created in rollup.config.js
 - The README_PACKAGE.md is copied over to dist as README.md.
 
-> Settings - rollup.config.js, README_PACKAGE.md
+### Special notes on index.js and exports
+
+- Export rules - Unless using an index.js file, always export as default.
+- When to create an index.js file? - Only create when a component relies on others. (For example, Reactstrap's Dropdown component works alongside the DropdownToggle, DropdownMenu, and DropdownItem components and could be packaged together.)
+- Build Autogeneration - To make files more easier searchable within the IDE and to avoid redundancy when consuming the package, an auto-generated index.js file is created when the file is the same name as the parent directory and the directory doesn't already have an index.js file.
+- Example: src/ui/BlueButton/BlueButton would become dist/cjs/ui/BlueButton/index.js if index.js doesn't exist in src/ui/BlueButton. This gives us the best of both worlds, by allowing us to search with IDE on BlueButton (not index.js) and allow consumers to import like this `import BlueButton from 'jl-react-components-library/cjs/ui/BlueButton'`.
+
+> **Settings** - scripts/build/\*
 
 ---
 
@@ -105,7 +126,7 @@ Build uses [Rollup](https://rollupjs.org) to generate indepdendent component bun
 
 These are based on create-react-app's linting rules, whith a few minor tweaks. Husky and lint-staged is used to prevent commits when any lint rules or errors are broken.
 
-> Settings - package.json (eslintConfig, lint-staged, and husky)
+> **Settings** - package.json (eslintConfig, lint-staged, and husky)
 
 ---
 
@@ -113,15 +134,44 @@ These are based on create-react-app's linting rules, whith a few minor tweaks. H
 
 Prettier is used and is configured under prettier in package.json. Husky and lint-staged is used to format before commits.
 
-> Settings - package.json (eslintConfig, lint-staged, and husky)
+> **Settings** - package.json (eslintConfig, lint-staged, and husky)
 
 ---
 
 ## Test
 
-Jest, [@testing-library/react](https://testing-library.com), and [react-hooks-testing-library](https://github.com/mpeyper/react-hooks-testing-library) are used for testing.
+[Jest](https://jestjs.io), [@testing-library/react](https://testing-library.com), and [react-hooks-testing-library](https://github.com/mpeyper/react-hooks-testing-library) are used for testing.
 
-> Settings package.json (jest)
+> **Settings** package.json ([Jest](https://jestjs.io)), scripts/test/\*
+
+---
+
+## NPM Linking for debugging
+
+If you have a separate app and want to reference this package locally without using the registry, [npm-link](https://docs.npmjs.com/cli/link) is supported. Here are the required steps:
+
+1. Using the terminal, run the build. You can also opt to use `build` if testing once.
+
+`npm run build-watch`
+
+2. `cd` into the `dist` directory and run `npm link`
+
+```bash
+cd dist
+npm link
+```
+
+3. Navigate to the root directory of the app you will be integrating with and run the following:
+
+`npm link jl-react-components-library`
+
+4. If finished debugging, unlink in both the package source dist folder and your other app's root directory.
+
+In the other app
+`npm unlink --no-save jl-react-components-library`
+
+In the package source dist folder
+`npm unlink`
 
 ---
 
@@ -133,7 +183,7 @@ To create new components, you can use the following to generate the component, s
 
 `npm run generate`
 
-> Settings - scripts/templates
+> **Settings** - scripts/templates
 
 ---
 
@@ -154,9 +204,9 @@ To create new components, you can use the following to generate the component, s
 
 ---
 
-## TODO
+## 3rd Party Issues
 
-Storybook bugs
+**Storybook**
 
 - Storybook bug - shows accessibility errors on CSS Modules.
 - Storybook bug - shows accessibility errors on root elements
@@ -169,5 +219,3 @@ Storybook bugs
 The following come up as warnings, but we don't need to add.
 
 - @emotion/core - Storybook bug - [https://github.com/storybookjs/storybook/issues/5919](https://github.com/storybookjs/storybook/issues/5919)
-
----
