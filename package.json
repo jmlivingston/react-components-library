@@ -16,7 +16,7 @@
     "start:info": "cross-env SBCONFIG_CONFIG_DIR=scripts/storybook start-storybook -p 4000 --quiet --ci",
     "build": "rollup -c ./scripts/build/rollup.config.js",
     "build-watch": "npm run build -- -w",
-    "publish-documentation": "storybook-to-ghpages --out=dist_storybook --existing-output-dir=dist_storybook",
+    "publish-documentation": "storybook-to-ghpages --out=storybook-static --existing-output-dir=storybook-static",
     "start-documentation": "npx http-server storybook-static",
     "test:dev": "jest --watch",
     "test": "jest",
