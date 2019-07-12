@@ -10,17 +10,10 @@ module.exports = {
       name: 'componentName',
       message: 'What is the name?',
       default: 'FooBar'
-    },
-    {
-      type: 'list',
-      name: 'componentType',
-      message: 'What is the type',
-      choices: ['core', 'report', 'compound'],
-      default: 'core'
     }
   ],
   actions: () => {
-    const baseName = path.join(basePath, '{{componentType}}/{{pascalCase componentName}}/{{pascalCase componentName}}')
+    const baseName = path.join(basePath, '{{pascalCase componentName}}/{{pascalCase componentName}}')
     const templateBaseName = './component/component'
     const fileExtensions = ['js', 'test.js', 'module.scss', 'stories.js']
 

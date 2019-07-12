@@ -8,11 +8,7 @@ const packageJson = require('../../package.json')
 module.exports = plop => {
   plop.setGenerator('component', componentGenerator)
   plop.setActionType('prettify', (answers, config, plop) => {
-    const folderPath = `${path.join(
-      __dirname,
-      `../../src/ui/${answers.componentType}/`,
-      plop.getHelper('pascalCase')(answers.componentName)
-    )}`
+    const folderPath = `${path.join(__dirname, `../../src/ui/`, plop.getHelper('pascalCase')(answers.componentName))}`
     fs.readdirSync(folderPath).forEach(file => {
       const fileName = path.join(folderPath, file)
       let parser = 'babel'
