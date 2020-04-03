@@ -1,14 +1,10 @@
-import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import React from 'react'
-import { storyConfig, storyConfigHelpers } from '../../../../scripts/storybook/storyConfig'
+import { getConfig } from '../../../scripts/storybook/storyConfig'
 import {{ pascalCase componentName }} from './{{ pascalCase componentName }}'
 
-const componentName = '{{ pascalCase componentName }}'
-const category = `${storyConfig.corePrefix}${componentName}`
-const config = storyConfigHelpers.getConfig({ componentName })
+export default getConfig({ title: '{{ pascalCase componentName }}', component: {{ pascalCase componentName }} })
 
-function {{ pascalCase componentName }}Demo() {
+export function Basic() {
   return <{{ pascalCase componentName }} text="TODO: {{ pascalCase componentName }}" />
 }
-
-storiesOf(category, module).add('{{ pascalCase componentName }}', {{ pascalCase componentName }}Demo, config)

@@ -1,15 +1,10 @@
 import { action } from '@storybook/addon-actions'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
-import { storyConfig, storyConfigHelpers } from '../../../scripts/storybook/storyConfig'
+import { getConfig } from '../../../scripts/storybook/storyConfig'
 import BlueButton from './BlueButton'
 
-const name = 'BlueButton'
-const category = `${storyConfig.corePrefix}${name}`
-const config = storyConfigHelpers.getConfig({ name })
+export default getConfig({ title: 'BlueButton', component: BlueButton })
 
-function BlueButtonDemo() {
-  return <BlueButton text="This is a blue button" onClick={action('button-click')} />
+export function Basic() {
+  return <BlueButton onClick={action('button-click')}>This is a blue button</BlueButton>
 }
-
-storiesOf(category, module).add('BlueButton', BlueButtonDemo, config)

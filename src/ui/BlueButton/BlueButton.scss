@@ -1,13 +1,14 @@
 .button {
-  background-color: #28a745;
-  color: #fff;
+  background-color: #007bff;
+  color: #ffffff;
   font-size: 16px;
   border-radius: 18px;
   padding: 10px 20px;
   border-style: none;
   cursor: pointer;
   text-transform: uppercase;
-  &:hover {
-    background-color: #218838;
-  }
+}
+
+.button:hover {
+  background-color: #0069d9;
 }

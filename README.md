@@ -51,7 +51,7 @@ This is a starting point for developing a reusable React component library using
 
 ## Styling
 
-This project allows CSS, SASS, CSS Modules, and SASS Modules. If you are importing from node_modules, you will need to prefix with a tilde `~`. SASS Example:
+This project allows CSS and SASS. If you are importing from node_modules, you will need to prefix with a tilde `~`. SASS Example:
 
 ```
 @import '~bootstrap/scss/_variables.scss'
@@ -78,7 +78,7 @@ This project allows CSS, SASS, CSS Modules, and SASS Modules. If you are importi
 - **PascalCase** - Component names, component parent folders, and any component related file names (.js, .test.js, .stories.js, .css, .module.css, .scss, .module.scss)
 - **SNAKE_CASE** (upper cased) - constant files and constant variables within.
 - **kebab-case** - class and id names for CSS or SASS.
-- **camelCase** - class and id names for CSS modules or SASS modules. All other functions, variables, and folders.
+- **camelCase** - class and id names. All other functions, variables, and folders.
 
 ---
 
@@ -213,9 +213,3 @@ To create new components, you can use the following to generate the component, s
 - Storybook bug - Error in console: The pseudo class ":first-child" is potentially unsafe when doing server-side rendering.
 
 ---
-
-## Peer Dependency Notes
-
-The following come up as warnings, but we don't need to add.
-
-- @emotion/core - Storybook bug - [https://github.com/storybookjs/storybook/issues/5919](https://github.com/storybookjs/storybook/issues/5919)

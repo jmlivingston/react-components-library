@@ -9,28 +9,28 @@ module.exports = {
       type: 'input',
       name: 'componentName',
       message: 'What is the name?',
-      default: 'FooBar'
-    }
+      default: 'FooBar',
+    },
   ],
   actions: () => {
     const baseName = path.join(basePath, '{{pascalCase componentName}}/{{pascalCase componentName}}')
     const templateBaseName = './component/component'
-    const fileExtensions = ['js', 'test.js', 'module.scss', 'stories.js']
+    const fileExtensions = ['js', 'test.js', 'scss', 'stories.js']
 
     const actions = [
-      ...fileExtensions.map(fileExtension => ({
+      ...fileExtensions.map((fileExtension) => ({
         type: 'add',
         force: true,
         path: `${baseName}.${fileExtension}`,
         templateFile: `${templateBaseName}.${fileExtension}.hbs`,
-        abortOnFail: true
+        abortOnFail: true,
       })),
       {
         type: 'prettify',
-        path: path.join(basePath, '{{pascalCase name}}')
-      }
+        path: path.join(basePath, '{{pascalCase name}}'),
+      },
     ]
 
     return actions
-  }
+  },
 }

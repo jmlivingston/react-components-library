@@ -1,0 +1,9 @@
+.documentation-light,
+.documentation-light a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+
+.documentation-light a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}

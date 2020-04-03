@@ -1,9 +1,9 @@
+import commonjs from '@rollup/plugin-commonjs'
 import fs from 'fs'
 import path from 'path'
 import rimraf from 'rimraf'
 import autoExternal from 'rollup-plugin-auto-external'
 import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
 import packageJson from '../../package.json'
@@ -32,7 +32,7 @@ function createReadmePackageJson() {
         repository: packageJson.repository,
         keywords: packageJson.keywords,
         dependencies: packageJson.dependencies,
-        peerDependencies: packageJson.peerDependencies
+        peerDependencies: packageJson.peerDependencies,
       },
       null,
       2
@@ -52,14 +52,14 @@ function getOutputs({ file }) {
     )
   }
 
-  return buildFormats.map(format => {
+  return buildFormats.map((format) => {
     const fileDistDirectory = fileDirectory.replace('src', 'dist').replace(distDirectory, '')
     const output = {
       file: shouldUseIndex()
         ? path.join(distDirectory, format, fileDistDirectory, 'index.js')
         : path.join(distDirectory, format, fileDistDirectory, fileBaseName),
       format,
-      exports: 'named'
+      exports: 'named',
     }
     return output
   })
@@ -71,26 +71,27 @@ createReadmePackageJson()
 
 export default getFilesFolders(srcDirectory)
   .filter(
-    file =>
+    (file) =>
       file.includes('.js') &&
       !file.includes('examples') &&
       !file.includes('.mock.js') &&
       !file.includes('.test.js') &&
       !file.includes('.stories.js')
   )
-  .map(file => ({
+  .map((file) => ({
     input: file,
     output: getOutputs({ file }),
     plugins: [
       autoExternal(),
       babel({
-        exclude: '/node_modules/**'
+        exclude: '/node_modules/**',
       }),
       commonjs(),
 
       postcss({
-        modules: fs.existsSync(file.replace('.js', '.module.scss')) || fs.existsSync(file.replace('.js', '.module.css'))
+        modules:
+          fs.existsSync(file.replace('.js', '.module.scss')) || fs.existsSync(file.replace('.js', '.module.css')),
       }),
-      terser()
-    ]
+      terser(),
+    ],
   }))

@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import styles from './BlueButton.module.scss'
+import './BlueButton.scss'
 
-function BlueButton({ onClick, text }) {
+function BlueButton({ onClick, children }) {
   return (
-    <button className={styles.button} onClick={onClick}>
-      {text}
+    <button className="button" onClick={onClick}>
+      {children}
     </button>
   )
 }
 
 BlueButton.propTypes = {
+  children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
 }
 
 export default BlueButton
