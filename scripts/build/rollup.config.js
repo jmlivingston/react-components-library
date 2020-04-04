@@ -94,4 +94,5 @@ export default getFilesFolders(srcDirectory)
       }),
       terser(),
     ],
+    external: ['prop-types'],
   }))
