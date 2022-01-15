@@ -62,7 +62,7 @@
     "jest-junit": "10.0.0",
     "jest-transform-css": "2.0.0",
     "lint-staged": "10.1.1",
-    "marked": "0.8.2",
+    "marked": "4.0.10",
     "node-sass": "4.13.1",
     "plop": "2.6.0",
     "prettier": "2.0.2",
